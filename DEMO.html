@@ -1,0 +1,439 @@
+border: 1px solid var(--border-color);
+border-radius: 12px;
+padding: 20px;
+position: sticky;
+top: 25px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+height: fit-content;
+}
+.cart-title {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(--border-color);
+padding-bottom: 10px;
+}
+.cart-items-list {
+max-height: 240px;
+overflow-y: auto;
+margin-bottom: 15px;
+}
+.empty-cart-msg {
+color: #888;
+font-size: 13px;
+text-align: center;
+padding: 20px 0;
+}
+.cart-item-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 0;
+border-bottom: 1px dashed var(--border-color);
+font-size: 13px;
+}
+.remove-item-btn {
+color: #d32f2f;
+background: transparent;
+border: none;
+cursor: pointer;
+font-size: 11px;
+margin-left: 5px;
+}
+/* Payment Configuration Mode Matrix */
+.payment-method-box {
+background: var(--bg-light);
+border-radius: 8px;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid #e0e0e0;
+}
+.pay-option {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 13px;
+margin-bottom: 8px;
+cursor: pointer;
+}
+.pay-option:last-child {
+margin-bottom: 0;
+}
+.discount-callout {
+background: #fff3e0;
+border-left: 4px solid var(--secondary);
+padding: 8px 12px;
+border-radius: 0 6px 6px 0;
+font-size: 11px;
+color: #e65100;
+margin-top: 10px;
+font-weight: 500;
+}
+/* Customer Metadata Form Blocks */
+.form-field {
+margin-bottom: 12px;
+}
+.form-field label {
+display: block;
+font-size: 12px;
+font-weight: 500;
+margin-bottom: 4px;
+color: #555;
+}
+.form-field input, .form-field textarea {
+width: 100%;
+border: 1px solid var(--border-color);
+padding: 8px 12px;
+border-radius: 6px;
+font-size: 13px;
+outline: none;
+}
+.form-field input:focus, .form-field textarea:focus {
+border-color: var(--primary);
+}
+.summary-totals {
+border-top: 1px solid var(--border-color);
+padding-top: 12px;
+margin-bottom: 15px;
+}
+.total-line {
+display: flex;
+justify-content: space-between;
+font-size: 13px;
+margin-bottom: 6px;
+}
+.total-line.grand-total {
+font-size: 16px;
+font-weight: 700;
+color: var(--primary-dark);
+margin-top: 10px;
+border-top: 1px solid #f0f0f0;
+padding-top: 8px;
+}
+.whatsapp-submit-btn {
+width: 100%;
+background: #25d366;
+color: white;
+border: none;
+padding: 12px;
+border-radius: 8px;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: background 0.2s;
+}
+.whatsapp-submit-btn:hover {
+background: #128c7e;
+}
+/* App Footer Elements */
+.app-footer {
+background: #212121;
+color: #b0bec5;
+text-align: center;
+padding: 30px 20px;
+font-size: 12.5px;
+border-top: 5px solid var(--primary);
+}
+.footer-logo {
+color: white;
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 6px;
+}
+
+
+✨ 10% OFF on Advance Payment via Bank Transfer, JazzCash & Easypaisa! (Karachi Orders Only)
+JUST
+DRIED
+
+
+
+JUST DRIEDTM
+جسـٹ ڈرائیـڈ - 100% ڈی ہائیڈریٹڈ خالص مصالحہ جات
+📞 0300-0202437
+📞 0300-0202438
+📍 Karachi Only
+
+
+Catalog Builder
+Why Dehydrated?
+Payment Info
+
+
+🛒 Cart: 0 items
+
+
+All Products (14)
+Vegetable Powders & Chunks
+Seasonings & Mixes
+Herbs & Pure Spices
+Health & Superfoods
+Order Basket
+(0 Items)
+Your basket is empty. Choose weight packs on left to populate invoice template.
+Payment Preference:
+🎉 10% discount has been successfully processed against total order sum!
+
+Customer Full Name *
+Delivery Address (Karachi) *
+Items Subtotal
+PKR 0
+
+
+Advance Pay Discount (-10%)
+-PKR 0
+
+
+Delivery Charges
+FREE
+
+
+Estimated Total Balance
+PKR 0
+
+💬 Complete Order via WhatsApp
+
+
+Just Dried Food Project
+© 2026 Premium Dehydrated Food Solutions. All Rights Reserved.
+100% Chemical Free · Packed in Premium Airtight Storage Pouches
+// Database structured list representing complete 30+ product range data references
+const datasetProducts = [
+{ id: "p1", category: "Superfoods", titleEn: "Beet Root Powder", titleUr: "چقندر پاؤڈر", desc: "100% pure dehydrated beet root. Rich in antioxidants and intense natural coloring properties.", prices: { p50g: 230, p100g: 480 } },
+{ id: "p2", category: "Seasonings", titleEn: "Chat Pata Seasoning", titleUr: "چٹ پٹا سیزننگ", desc: "Zesty traditional seasoning blend for snack foods, french fries, fresh fruits and raita.", prices: { p50g: 80, p100g: 150 } },
+{ id: "p3", category: "Seasonings", titleEn: "Chicken Powder", titleUr: "چکن پاؤڈر", desc: "Rich premium savory seasoning powder to build immediate stock depths for soups, gravies, and rice dishes.", prices: { p50g: 250, p100g: 460 } },
+{ id: "p4", category: "Superfoods", titleEn: "Dry Date Powder", titleUr: "کھجور پاؤڈر", desc: "100% natural fruit health sweetener alternative replacing standard processed industrial white sugar.", prices: { p50g: 180, p100g: 300 } },
+{ id: "p5", category: "Seasonings", titleEn: "Fries Seasoning", titleUr: "فرائز سیزننگ", desc: "Premium restaurant-grade signature aromatic seasoned spice salt mix for deep-fried potato finger chips.", prices: { p50g: 80, p100g: 150 } },
+{ id: "p6", category: "Vegetables", titleEn: "Garlic Chunks", titleUr: "لہسن کے چنکس", desc: "Dehydrated crispy garlic chunks. Perfect for golden tadka oil and aromatic slow-cooked curries.", prices: { p50g: 220, p100g: 450 } },
+{ id: "p7", category: "Vegetables", titleEn: "Garlic Powder", titleUr: "لہسن پاؤڈر", desc: "Intense aroma whole-garlic ground powder. Eliminates tedious peeling, washing and cutting routines.", prices: { p50g: 140, p100g: 220 } },
+{ id: "p8", category: "Vegetables", titleEn: "Ginger Powder", titleUr: "ادرک پاؤڈر", desc: "Finely ground sun-dehydrated sharp ginger powder for hot teas, wellness herbal drinks, and general cooking.", prices: { p50g: 120, p100g: 200 } },
+{ id: "p9", category: "Vegetables", titleEn: "Green Chilli Powder", titleUr: "ہری مرچ پاؤڈر", desc: "Spicy natural high-kick green pepper powder. Delivers excellent baseline heat profile without altering dish coloration.", prices: { p50g: 140, p100g: 220 } },
+{ id: "p10", category: "Herbs", titleEn: "Green Mint Powder", titleUr: "پودینہ پاؤڈر", desc: "Aromatic dried spearmint herb powder. Ideal for making lightning-fast cool yogurt raita, green chutneys and coolers.", prices: { p50g: 300, p100g: 560 } },
+{ id: "p11", category: "Vegetables", titleEn: "Onion Chunks", titleUr: "پیاز چنکس", desc: "Dehydrated crisp onion bits. Perfect base material to initiate fast pan frying and building baseline korma gravies.", prices: { p50g: 220, p100g: 450 } },
+{ id: "p12", category: "Vegetables", titleEn: "Onion Powder", titleUr: "پیاز پاؤڈر", desc: "Ultra-smooth texturing onion powder. Seamlessly builds clean consistency across creamy restaurant gravies.", prices: { p50g: 200, p100g: 380 } },
+{ id: "p13", category: "Vegetables", titleEn: "Potato Powder", titleUr: "آلو پاؤڈر", desc: "Dehydrated dense potato flour base. Ideal thickness binder for making quick vegetable cutlets or soup structuring.", prices: { p50g: 120, p100g: 220 } },
+{ id: "p14", category: "Seasonings", titleEn: "Roasted Chicken Powder", titleUr: "روسٹڈ چکن پاؤڈر", desc: "Deep smoky roasted whole chicken profile spice infusion mix designed for commercial culinary spaces.", prices: { p50g: 300, p100g: 560 } }
+];
+// Active state holding runtime shopping cart choices
+let workingBasket = [];
+// Initialize application layout mapping inside interface engine
+window.onload = function() {
+renderCatalogCards(datasetProducts);
+};
+// Render functions generating user interface components
+function renderCatalogCards(filteredArray) {
+const catalogContainer = document.getElementById("catalog-target-grid");
+catalogContainer.innerHTML = "";
+filteredArray.forEach(product => {
+const card = document.createElement("div");
+card.className = "product-card";
+card.setAttribute("data-category", product.category);
+card.innerHTML = `
+
+
+${product.category}
+
+${product.titleEn}
+${product.titleUr}
+${product.desc}
+50 Gram Pack
+100 Gram Pack
+Price:
+PKR ${product.prices.p50g}
+➕ Add To Order Basket
+
+
+`;
+catalogContainer.appendChild(card);
+// Set default track attributes directly on the DOM reference nodes
+card.selectedWeight = "50g";
+card.selectedPrice = product.prices.p50g;
+});
+}
+// Segment switching navigation controller
+function filterCategory(targetCat, tabElement) {
+// Reset state highlighting on tab headers
+document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+tabElement.classList.add('active');
+if(targetCat === 'All') {
+renderCatalogCards(datasetProducts);
+} else {
+const filtered = datasetProducts.filter(p => p.category === targetCat);
+renderCatalogCards(filtered);
+}
+}
+// Inline toggle switch responding to packing configurations
+function setCardWeightSelection(productId, weightString, unitPrice) {
+const btn50 = document.getElementById(wt-50-${productId});
+const btn100 = document.getElementById(wt-100-${productId});
+const textLabel = document.getElementById(price-lbl-${productId});
+// Access parent layout frame to update temporary values
+const cards = document.querySelectorAll('.product-card');
+let targetCard = null;
+// Re-find structural matching element context
+for (let c of cards) {
+if(c.innerHTML.includes(commitItemToBasket('${productId}'))) {
+targetCard = c;
+break;
+}
+}
+if(weightString === '50g') {
+btn50.classList.add('active');
+btn100.classList.remove('active');
+textLabel.innerText = unitPrice;
+if(targetCard) {
+targetCard.selectedWeight = "50g";
+targetCard.selectedPrice = unitPrice;
+}
+} else {
+btn100.classList.add('active');
+btn50.classList.remove('remove'); // safety reset
+btn50.classList.remove('active');
+btn100.classList.add('active');
+textLabel.innerText = unitPrice;
+if(targetCard) {
+targetCard.selectedWeight = "100g";
+targetCard.selectedPrice = unitPrice;
+}
+}
+}
+// Append active configuration options into global memory stack
+function commitItemToBasket(productId) {
+const products = document.querySelectorAll('.product-card');
+let matchedWeight = "50g";
+let matchedPrice = 0;
+for (let c of products) {
+if(c.innerHTML.includes(commitItemToBasket('${productId}'))) {
+matchedWeight = c.selectedWeight || "50g";
+matchedPrice = c.selectedPrice;
+break;
+}
+}
+// Fallback checking framework against dataset structural definition files if grid row not localized
+const baseProductMeta = datasetProducts.find(p => p.id === productId);
+if(!matchedPrice && baseProductMeta) {
+matchedPrice = matchedWeight === '50g' ? baseProductMeta.prices.p50g : baseProductMeta.prices.p100g;
+}
+// Create structural record mapping sequence
+const basketEntry = {
+entryKey: productId + '-' + matchedWeight,
+id: productId,
+name: baseProductMeta.titleEn,
+weight: matchedWeight,
+price: parseFloat(matchedPrice)
+};
+// Prevent repetitive duplication vectors; increment or alert if entry already instantiated
+const existingIndex = workingBasket.findIndex(item => item.entryKey === basketEntry.entryKey);
+if(existingIndex > -1) {
+alert(${baseProductMeta.titleEn} (${matchedWeight}) is already inside your purchase basket layout matrix!);
+return;
+}
+workingBasket.push(basketEntry);
+syncBasketInterfaceState();
+}
+// Delete choice routine mapping
+function dropItemFromBasket(entryKeyIdentifier) {
+workingBasket = workingBasket.filter(item => item.entryKey !== entryKeyIdentifier);
+syncBasketInterfaceState();
+}
+// Core compilation calculations pipeline parsing variables in sync
+function syncBasketInterfaceState() {
+const listContainer = document.getElementById("cart-items-container");
+const badgeCount = document.getElementById("badge-count");
+const counterText = document.getElementById("cart-item-counter");
+badgeCount.innerText = workingBasket.length;
+counterText.innerText = (${workingBasket.length} Items);
+if(workingBasket.length === 0) {
+listContainer.innerHTML = 'Your basket is empty. Choose weight packs on left to populate invoice template.';
+calculateCartTotals();
+return;
+}
+listContainer.innerHTML = "";
+workingBasket.forEach(item => {
+const row = document.createElement("div");
+row.className = "cart-item-row";
+row.innerHTML = <div> <strong>${item.name}</strong> <span style="color:#757575; font-size:11px;">(${item.weight})</span> </div> <div> <span>PKR ${item.price}</span> <button class="remove-item-btn" onclick="dropItemFromBasket('${item.entryKey}')">❌</button> </div>;
+listContainer.appendChild(row);
+});
+calculateCartTotals();
+}
+// Mathematical summation processing logic with conditional state engines
+function calculateCartTotals() {
+let subtotal = 0;
+workingBasket.forEach(item => { subtotal += item.price; });
+// Evaluate radio state conditions
+const payMethods = document.getElementsByName("pay_method");
+let selectedMethod = "COD";
+for(let radio of payMethods) {
+if(radio.checked) { selectedMethod = radio.value; break; }
+}
+const advBanner = document.getElementById("advance-incentive-banner");
+const discountRow = document.getElementById("discount-display-row");
+let discountValue = 0;
+if(selectedMethod === "Advance") {
+discountValue = Math.round(subtotal * 0.10);
+advBanner.style.display = "block";
+discountRow.style.display = "flex";
+} else {
+advBanner.style.display = "none";
+discountRow.style.display = "none";
+}
+let grandTotal = subtotal - discountValue;
+// Apply updates straight onto UI text tracking layers
+document.getElementById("subtotal-val").innerText = subtotal;
+document.getElementById("discount-val").innerText = discountValue;
+document.getElementById("grandtotal-val").innerText = grandTotal;
+}
+// WhatsApp message assembler compilation routine mapping fields to URI components
+function forwardOrderToWhatsApp() {
+const customerName = document.getElementById("client-name").value.trim();
+const customerAddress = document.getElementById("client-address").value.trim();
+if(workingBasket.length === 0) {
+alert("Please add at least one product item to your cart configuration matrix before attempting checkout!");
+return;
+}
+if(!customerName || !customerAddress) {
+alert("Please provide valid information for Customer Name and Address parameters to authorize shipping files.");
+return;
+}
+// Gather structural calculations
+const subtotal = document.getElementById("subtotal-val").innerText;
+const discount = document.getElementById("discount-val").innerText;
+const grandTotal = document.getElementById("grandtotal-val").innerText;
+const payMethods = document.getElementsByName("pay_method");
+let methodText = "Cash on Delivery (Karachi)";
+for(let r of payMethods) {
+if(r.checked && r.value === 'Advance') { methodText = "Advance Digital Remittance (Bank/JazzCash/EasyPaisa)"; }
+}
+// Build beautifully structured textual context array sequence matching clean WhatsApp string parsing
+let textMessage = *JUST DRIED PAKISTAN - DIGITAL INVOICE ORDER BUILDER*\n;
+textMessage += ====================================\n\n;
+textMessage += *CUSTOMER PROFILE*:\n;
+textMessage += 👤 Name: ${customerName}\n;
+textMessage += 📍 Address: ${customerAddress}\n\n;
+textMessage += *ORDERED PACKS CONFIGURATION*:\n;
+workingBasket.forEach((item, index) => {
+textMessage += ${index + 1}. ${item.name} (${item.weight}) - PKR ${item.price}\n;
+});
+textMessage += \n*FINANCIAL SUMMARY*:\n;
+textMessage += ▫️ Items Subtotal: PKR ${subtotal}\n;
+if(parseInt(discount) > 0) {
+textMessage += ▫️ Advance Pay Discount (10%): -PKR ${discount}\n;
+}
+textMessage += ▫️ Delivery Charges: *FREE*\n;
+textMessage += 💰 *Grand Total Payable Balance*: *PKR ${grandTotal}*\n\n;
+textMessage += *PAYMENT ROUTE SELECTION*:\n${methodText}\n\n;
+textMessage += ====================================\n;
+textMessage += _Processed using Just Dried Digital E-Commerce Interface. Please verify dispatch slots now._;
+// Execute formatting string transformation via universal components
+const packagedUrlEndpoint = https://wa.me + encodeURIComponent(textMessage);
+// Perform application window transfer sequence trigger
+window.open(packagedUrlEndpoint, '_blank');
+}
